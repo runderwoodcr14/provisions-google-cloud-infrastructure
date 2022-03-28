@@ -28,8 +28,8 @@ dependency "host-project" {
 inputs = {
   project_id    = dependency.host-project.outputs.host_project_id
   type          = "private"
-  name          = "itsmartcr-local-zone"
-  domain        = "itsmartcr.local."
+  name          = "domain-local-zone"
+  domain        = "domain.local."
   force_destroy = true
   network = [
     "${dependency.host-project.outputs.network_self_link}",
