@@ -1,0 +1,295 @@
+automerge: false
+parallel_apply: true
+parallel_plan: true
+delete_source_branch_on_merge: true
+projects:
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../../../../../modules/cloud-dns/*.tf*
+    dir: regions/EU/west1/common/cloud-dns
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../service-project/terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../modules/kms/*.tf*
+    dir: regions/EU/west1/common/cloud-kms
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../service-project/terragrunt.hcl
+        - ../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../modules/gke/*.tf*
+    dir: regions/EU/west1/common/gke
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../../../../../modules/gcp-projects/*.tf*
+    dir: regions/EU/west1/common/service-project
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../service-project/terragrunt.hcl
+        - ../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../modules/pritunl/*.tf*
+    dir: regions/EU/west1/common/vpn-server
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../../terragrunt.hcl
+        - ../../service-project/terragrunt.hcl
+        - ../../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../../modules/bootstrap/*.tf*
+        - ../../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../../modules/workload-identity/*.tf*
+    dir: regions/EU/west1/common/workload-identity/atlantis
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../../terragrunt.hcl
+        - ../../service-project/terragrunt.hcl
+        - ../../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../../modules/bootstrap/*.tf*
+        - ../../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../../modules/workload-identity/*.tf*
+    dir: regions/EU/west1/common/workload-identity/external-dns
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../../../../../modules/cloud-dns/*.tf*
+    dir: regions/EU/west1/development/cloud-dns
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../service-project/terragrunt.hcl
+        - ../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../modules/gke/*.tf*
+    dir: regions/EU/west1/development/gke
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../../../../../modules/gcp-projects/*.tf*
+    dir: regions/EU/west1/development/service-project
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../../terragrunt.hcl
+        - ../../service-project/terragrunt.hcl
+        - ../../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../../modules/bootstrap/*.tf*
+        - ../../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../../modules/workload-identity/*.tf*
+    dir: regions/EU/west1/development/workload-identity/external-dns
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../../../../../modules/cloud-dns/*.tf*
+    dir: regions/EU/west1/production/cloud-dns
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../service-project/terragrunt.hcl
+        - ../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../modules/gke/*.tf*
+    dir: regions/EU/west1/production/gke
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../../../../../modules/gcp-projects/*.tf*
+    dir: regions/EU/west1/production/service-project
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../../terragrunt.hcl
+        - ../../service-project/terragrunt.hcl
+        - ../../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../../modules/bootstrap/*.tf*
+        - ../../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../../modules/workload-identity/*.tf*
+    dir: regions/EU/west1/production/workload-identity/external-dns
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../../../../../modules/cloud-dns/*.tf*
+    dir: regions/EU/west1/staging/cloud-dns
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../service-project/terragrunt.hcl
+        - ../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../modules/gke/*.tf*
+    dir: regions/EU/west1/staging/gke
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../terragrunt.hcl
+        - ../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../modules/bootstrap/*.tf*
+        - ../../../../../modules/gcp-projects/*.tf*
+    dir: regions/EU/west1/staging/service-project
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../../../../terragrunt.hcl
+        - ../../service-project/terragrunt.hcl
+        - ../../../../../Global/host-project/terragrunt.hcl
+        - ../../../../../../modules/bootstrap/*.tf*
+        - ../../../../../../modules/gcp-projects/*.tf*
+        - ../../../../../../modules/workload-identity/*.tf*
+    dir: regions/EU/west1/staging/workload-identity/external-dns
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../terragrunt.hcl
+        - ../host-project/terragrunt.hcl
+        - ../../../modules/bootstrap/*.tf*
+        - ../../../modules/kms/*.tf*
+    dir: regions/Global/cloud-kms
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../terragrunt.hcl
+        - ../host-project/terragrunt.hcl
+        - ../../../modules/bootstrap/*.tf*
+        - ../cloud-router/terragrunt.hcl
+        - ../../../modules/router/*.tf*
+        - ../../../modules/nat/*.tf*
+    dir: regions/Global/cloud-nat
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../terragrunt.hcl
+        - ../host-project/terragrunt.hcl
+        - ../../../modules/bootstrap/*.tf*
+        - ../../../modules/router/*.tf*
+    dir: regions/Global/cloud-router
+    workflow: default
+  - autoplan:
+      enabled: true
+      when_modified:
+        - "*.hcl"
+        - "*.tf*"
+        - ../../../terragrunt.hcl
+        - ../../../modules/bootstrap/*.tf*
+    dir: regions/Global/host-project
+    workflow: default
+version: 3
+workflows:
+  default:
+    apply:
+      steps:
+        - env:
+            command: echo "terraform${ATLANTIS_TERRAFORM_VERSION}"
+            name: TERRAGRUNT_TFPATH
+        - run: terragrunt apply -no-color $PLANFILE
+    plan:
+      steps:
+        - env:
+            command: echo "terraform${ATLANTIS_TERRAFORM_VERSION}"
+            name: TERRAGRUNT_TFPATH
+        - run: terragrunt plan -no-color -out $PLANFILE
