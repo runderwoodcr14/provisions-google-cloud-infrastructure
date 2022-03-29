@@ -211,3 +211,13 @@ Now after this point, you can deploy ArgoCD, follow the instructions in this [re
 
 #### Atlantis
 If you deployed ArgoCD as mentioned above, now you have the ability to continue the deployment of your infrastructure using Atlantis you can modify the atlantis configuration by editing the file [atlantis.yaml](atlantis.yaml)
+
+
+## Troubleshooting
+
+If you face some problems by running locally `terragrunt plan` or `terragrunt apply` you may consider running it like this:
+`terragrunt plan --terragrunt-non-interactive --terragrunt-include-external-dependencies --terragrunt-download-dir ~/tfcode`
+`terragrunt apply --terragrunt-non-interactive --terragrunt-include-external-dependencies --terragrunt-download-dir ~/tfcode`
+
+This is related with the download of the modules via ssh and there is an issue open about it, which you can check [here](https://github.com/gruntwork-io/terragrunt/issues/1331)
+
