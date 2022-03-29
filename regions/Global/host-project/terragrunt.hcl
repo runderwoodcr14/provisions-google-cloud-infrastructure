@@ -27,7 +27,6 @@ inputs = {
   root_node            = include.root.inputs.org_id
   prefix               = include.root.inputs.prefix
   environments         = (["development", "staging", "production", "common"])
-  iam_shared_owners    = ["user:user@domain.com"]
   iam_terraform_owners = ["user:user@domain.com"]
   force_destroy        = true
   global_user          = "terraform-global"
@@ -40,10 +39,10 @@ inputs = {
 
   subnets = [
     {
-      subnet_name               = "europe-west3-subnet-01"
+      subnet_name               = "europe-west1-subnet-01"
       description               = "This subnet has a description"
       subnet_ip                 = "10.21.0.0/22"
-      subnet_region             = "europe-west3"
+      subnet_region             = "europe-west1"
       subnet_private_access     = "true"
       subnet_flow_logs          = "true"
       subnet_flow_logs_interval = "INTERVAL_10_MIN"
@@ -51,10 +50,10 @@ inputs = {
       subnet_flow_logs_metadata = "INCLUDE_ALL_METADATA"
     },
     {
-      subnet_name               = "europe-west3-subnet-02"
+      subnet_name               = "europe-west1-subnet-02"
       description               = "This subnet has a description"
       subnet_ip                 = "10.21.4.0/22"
-      subnet_region             = "europe-west3"
+      subnet_region             = "europe-west1"
       subnet_private_access     = "true"
       subnet_flow_logs          = "true"
       subnet_flow_logs_interval = "INTERVAL_10_MIN"
